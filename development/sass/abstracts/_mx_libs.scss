@@ -65,10 +65,10 @@
 }
 
 /* ==================== Set Font ==================== */
-@mixin setFont($fontSize, $color, $fontWeight: null, $fontFamily: null){
+@mixin setFont($fontSize, $color: null, $fontWeight: null, $fontFamily: null){
   color: $color;
-  font-size:$fontSize;
-
+  font-size: $fontSize;
+  
   @if $fontWeight != null {
     font-weight: $fontWeight; 
   }

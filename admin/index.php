@@ -200,6 +200,11 @@ switch($com){
 if((!isset($_SESSION[$login_name_admin]) || $_SESSION[$login_name_admin]==false) && $act!="login"){
 	redirect("index.php?com=user&act=login");
 }
+if($_GET['act']=='man' || $_GET['act']=='man_cat' || $_GET['act']=='man_list' || 
+	$_GET['act']=='capnhat' || $_GET['act']=='man_photo' || $_GET['act']=='man_danhmuc' ||
+	 $_GET['act']=='man_item' || $_GET['act']=='man_imgcolor'){
+    $_SESSION['links_re'] = getCurrentPage();
+}
 if(phanquyen($_SESSION['login_admin']['com'],$_SESSION['login_admin']['nhom'],$_GET['com'],$_GET['act'],$_GET['type'])){
 	transfer("Bạn Không có quyền vào đây. Vui lòng liên hệ admin. Cảm ơn!",'index.php');
 }

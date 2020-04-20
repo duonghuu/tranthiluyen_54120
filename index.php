@@ -50,8 +50,8 @@ $_SESSION['dong'] = lay_banner('dong');
             include _template."layout/slider.php";
             if($source != "index") echo $bread->display();
             ?>
-            <div class="main_content <?php if($source!="index") echo 'container';  ?>">
-                <?php if($template == 'productxx') {  ?>
+            <div class="main_content <?php if($source!="index1") echo 'container';  ?>">
+                <?php if($template != 'productxx') {  ?>
                     <div class="clearfix">
                         <div class="left">
                             <?php include _template."layout/left.php";?>

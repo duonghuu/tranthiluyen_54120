@@ -264,7 +264,7 @@ function get_main_category()
 			<?php } ?>
 			<?php if(in_array('hinhanh',$config['type'])) { ?>
         <td align="center">
-            <a href="index.php?com=news&act=edit&id_danhmuc=<?=$items[$i]['id_danhmuc']?>&id_list=<?=$items[$i]['id_list']?>&id_cat=<?=$items[$i]['id_cat']?>&id_item=<?=$items[$i]['id_item']?>&type=<?=$_REQUEST['type']?>&p=<?=$_REQUEST['p']?>&id=<?=$items[$i]['id']?>" class="tipS SC_bold"><img src="<?=_upload_tintuc.$items[$i]['thumb']?>" style="max-height:40px; max-width:70px;" /></a>
+            <a href="index.php?com=news&act=edit&id_danhmuc=<?=$items[$i]['id_danhmuc']?>&id_list=<?=$items[$i]['id_list']?>&id_cat=<?=$items[$i]['id_cat']?>&id_item=<?=$items[$i]['id_item']?>&type=<?=$_REQUEST['type']?>&p=<?=$_REQUEST['p']?>&id=<?=$items[$i]['id']?>" class="tipS SC_bold"><img src="<?=_upload_tintuc.$items[$i]['photo']?>" style="max-height:40px; max-width:70px;" /></a>
         </td>
 			<?php } ?>
 			<?php if(in_array('noibat',$config['type'])) { ?>

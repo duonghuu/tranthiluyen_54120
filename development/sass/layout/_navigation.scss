@@ -38,24 +38,26 @@
 
     z-index: 451 !important;
     background-color: $bg-menu;
+    margin-left: em(100);
     @include when-inside('.clsindex'){
         
     }
     
 }
 .main-nav {
-    @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+    @include grid($display: flex, $justify-content: space-between, $align-items: center);
     position: relative;
     ul{
         @extend %reset-list;
     }
     &>ul {
-        @include boxstyle($display: flex, $align-items: center,$justify-content: space-between);
+        @include grid($display: flex, $align-items: center,$justify-content: space-between);
         @include flex(1);
         z-index: 5;
         position: relative;
+        margin-right: em(40);
         &>li {
-            @include boxstyle($display: flex, $align-items: center, $justify-content: space-between);
+            @include grid($display: flex, $align-items: center, $justify-content: space-between);
             position: relative;
             z-index: 5;
             @include flex(auto);
@@ -73,7 +75,7 @@
             @include setTagAHover(#fff,$color-menu-hover);
             &>a {
                 @include boxstyle($display: flex, $align-items: center,$justify-content: center, $flex-wrap: wrap);
-                @include setFont(14px, #fff, 700, $font-menu);
+                @include setFont(15px, #000, 700, $font-menu);
                 min-height: 38px;
                 position: relative;
                 text-align: center;

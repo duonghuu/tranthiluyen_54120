@@ -1,11 +1,11 @@
-<?php /* 
+<?php if($com == "nhu-cau-khach-hang"){ ?>
 <div class="tieude_giua"><div><?=$title_cat?></div></div> 
-*/?>
+<?php } ?>
 <div class="box_container">
    <div class="content contact-flex">
    		<div class="tt_lh">
         <?=lay_text('lienhe');?>
-		<div class="frm_lienhe">
+		    <div class="frm_lienhe">
             <form method="post" name="frm" class="frm" action="" enctype="multipart/form-data">
                 <?php /* <div class="loicapcha thongbao"></div> */?>
                 <div class="form-group"> <input required="" name="ten_lienhe" type="text" class="form-control" placeholder="<?= _hovaten ?>" /> </div>
@@ -23,7 +23,7 @@
             </form>
         </div><!--.frm_lienhe-->
         </div>
-
+        <?php if($com != "nhu-cau-khach-hang"){ ?>
         <div class="bando">
                     
 					<?=$company['bando']?>
@@ -54,5 +54,6 @@
 					   var popup = myInfoWindow;infowindow_array[id] = new google.maps.InfoWindow({ content: popup});google.maps.event.addListener(marker[id], 'mouseover', function() {if (id == old_id) return;if (old_id > 0) infowindow_array[old_id].close();infowindow_array[id].open(map, marker[id]);old_id = id;});google.maps.event.addListener(infowindow_array[id], 'closeclick', function() {old_id = 0;});}function moveToMaker(id){var location = marker[id].position;map.setCenter(location);if (old_id > 0) infowindow_array[old_id].close();infowindow_array[id].open(map, marker[id]);old_id = id;}</script>
 		           <div id="map_canvas"></div> */?>
         </div><!--.bando-->
+      <?php } ?>
    </div><!--.content-->
 </div><!--.box_container-->

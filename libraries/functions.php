@@ -763,7 +763,7 @@ function getCurrentPageURL() {
   $pageURL = 'http';
   if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
   $pageURL .= "://";
-  if ($_SERVER["SERVER_NAME"]== "locahost") {
+  if ($_SERVER["SERVER_NAME"]=="locahost") {
     $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
   } else {
     $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
@@ -775,13 +775,24 @@ function getCurrentPageURL_AMP() { //Hàm thêm mới - để thêm mới /amp/ 
   $pageURL = 'http';
   if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
   $pageURL .= "://";
-  if ($_SERVER["SERVER_PORT"] != "80") {
+  if ($_SERVER["SERVER_NAME"]=="locahost") {
     $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]."/amp".$_SERVER["REQUEST_URI"];
   } else {
     $pageURL .= $_SERVER["SERVER_NAME"]."/amp".$_SERVER["REQUEST_URI"];
   }
   $pageURL = explode("&p=", $pageURL);
   return $pageURL[0];
+}
+function getCurrentPage() {
+  $pageURL = 'http';
+  if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+  $pageURL .= "://";
+  if ($_SERVER["SERVER_NAME"]=="locahost") {
+    $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+  } else {
+    $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+  }
+  return $pageURL;
 }
 function seo_entities($str) {
   $res_2 = htmlentities($str, ENT_QUOTES, "UTF-8");

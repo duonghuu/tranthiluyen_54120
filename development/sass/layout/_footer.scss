@@ -21,7 +21,7 @@
     }
     .ft-flex {
         @include boxstyle($display: flex, $justify-content: space-between);
-        padding: 38px 0;
+        padding: 30px 0;
         .ft-logo { 
             a{
                 img{
@@ -31,8 +31,10 @@
         }
         .ft-info {
             position: relative;
-            width: percentage(410/1190);
+            width: percentage(430/1200);
         }
+
+
 
         .ft-bando {
         }
@@ -46,24 +48,30 @@
         }
 
         .ft-dknt{
+            @include flex(2);
         }
 
         .ft-social{
-            width: percentage(250/1190);
+            @include flex(1);
         }
         .ft-video{
-            width: percentage(285/1190);
         }
 
         .ft-baiviet {
-            width: percentage(210/1190);
+            @include flex(1);
             ul {
                 @extend %reset-list;
+                border-top: 1px solid rgba(51, 51, 51, 0.3);
+                padding-top: 10px;
                 li {
-                    margin-bottom: 10px;
+                    margin-bottom: 7px;
                     @include setTagAHover(#fff, #ff0);
+                    @include setFont(14px, #fff);
+                    i{
+                        margin-right: 5px;
+                    }
                     a {
-                        font-size: 13px;
+                        font-size: 14px;
                         position: relative;
                         @include boxstyle($display: flex, $align-items: flex-start);
                         &::before {
@@ -90,14 +98,17 @@
 
     .ft-tit {
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         strong, span {
-            @include setFont(14px, #fff, 700);
+            @include setFont(15px, #fff, 700);
             &::after {
-                content: "";
-                @include box(40px, 3px);
-                @include absolute($bottom: -10px, $left: 0);
-                background-color: #fff;
+                // content: "";
+                // @include box(40px, 3px);
+                // @include absolute($bottom: -10px, $left: 0);
+                // background-color: #fff;
             }
         }
 
@@ -106,6 +117,11 @@
             // @include box(152px, 1px);
             // @include absolute($left: 0, $bottom: -11px);
             // border-bottom: 1px dashed #fff;
+        }
+    }
+    .ft-right-bot{
+        .ft-tit {
+            border: 0;
         }
     }
 
@@ -125,11 +141,18 @@
     .copyright {
         position: relative;
         background: $bg-copyright; 
-        border-top: 1px solid rgba(255, 255, 255, 0.21);
+        
         .ft-wrap {
-            min-height: 54px;
+            min-height: 44px;
             @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
-            
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            &:before{
+                content: "";
+                @include box(100%, 1px);
+                @include absolute($left: 0px, $top: 0px);
+                background-color: rgba(51, 51, 51, 0.3); 
+            }
             .text {
                 @extend %copyright-font;
                 margin: 5px 0;
@@ -170,11 +193,22 @@
 }
 .ft-logo{
     display: block;
-    text-align: center;
+    margin-bottom: 20px;
     img{
 
     }
 }
 .mxhft{
     @extend %mxhft-style;
+}
+.ft-right{
+    @include flex(1);
+
+    &-top{
+        @include grid($display: flex, $justify-content: space-between);
+        margin-bottom: 10px;
+    }   
+    &-bot{
+        @include grid($display: flex, $justify-content: space-between);
+    }   
 }

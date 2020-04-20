@@ -5,8 +5,8 @@
     outline: none !important;
     background-color: transparent;
     @include transition(width .6s, border-radius .6s, background .6s, box-shadow .6s);
-    @include absolute($right: -60px);
-    @include setFont(17px, #fff, 700);
+    @include absolute($right: 0);
+    @include setFont(17px, #333, 700);
     @include box(36px, 32px);
     @include grid($display: inline-flex, $align-items: center, $justify-content: center);
     &::before{
@@ -27,7 +27,7 @@
     z-index: 50;
     display: none;
     margin: 0 auto;
-    @include absolute($right: 0);
+    @include absolute($right: 0, $top: 100%);
     &.hien {
         display: block;
     }

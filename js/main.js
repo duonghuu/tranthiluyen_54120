@@ -6082,7 +6082,7 @@ $(document).ready(function() {
     accessibility:false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay:false,
+    autoplay:true,
     autoplaySpeed:3000,
     speed:1000,
     arrows:true,
@@ -6096,7 +6096,7 @@ $(document).ready(function() {
       accessibility:false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay:false,
+      autoplay:true,
       autoplaySpeed:3000,
       speed:1000,
       arrows:true,
@@ -6172,106 +6172,6 @@ $(document).ready(function() {
 });
 
 
-$('.nhuongquyen-main').on({
-      beforeChange: function(event, slick, currentSlide, nextSlide) {
-          myLazyLoad.update();
-      }
-  }).slick({
-      lazyLoad: 'ondemand',
-      infinite: true,
-      accessibility: false,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
-      speed: 1000,
-      arrows: true,
-      centerMode: false,
-      dots: false,
-      draggable: true,
-      responsive: [{
-          breakpoint: 830,
-          settings: {
-              slidesToShow: 2
-          }
-      },{
-          breakpoint: 500,
-          settings: {
-              slidesToShow: 1
-          }
-      },{
-          breakpoint: 330,
-          settings: {
-              slidesToShow: 1
-          }
-      }]
-  });
-  $('.tinnb-main').on({
-        beforeChange: function(event, slick, currentSlide, nextSlide) {
-            myLazyLoad.update();
-        }
-    }).slick({
-        lazyLoad: 'ondemand',
-        infinite: true,
-        accessibility: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 3000,
-        speed: 1000,
-        arrows: true,
-        centerMode: false,
-        dots: false,
-        vertical: true,
-        draggable: true,
-        responsive: [{
-            breakpoint: 830,
-            settings: {
-                slidesToShow: 2
-            }
-        },{
-            breakpoint: 500,
-            settings: {
-                slidesToShow: 2
-            }
-        }]
-    });
-    $('.themanh-main').on({
-          beforeChange: function(event, slick, currentSlide, nextSlide) {
-              myLazyLoad.update();
-          }
-      }).slick({
-          lazyLoad: 'ondemand',
-          infinite: true,
-          accessibility: false,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          autoplay: false,
-          autoplaySpeed: 3000,
-          speed: 1000,
-          arrows: true,
-          centerMode: false,
-          dots: false,
-          draggable: true,
-          responsive: [{
-              breakpoint: 800,
-              settings: {
-                  slidesToShow: 2
-              }
-          },{
-              breakpoint: 500,
-              settings: {
-                  slidesToShow: 2
-              }
-          },{
-              breakpoint: 430,
-              settings: {
-                  slidesToShow: 1
-              }
-          }
-          ]
-      });
-
   $('.main_manu_valak ul li').each(function(index, el) {
     if($(this).children("ul").length) {
       $(this).prepend('<div class="btn_expand_menu_valak"></div>');
@@ -6344,6 +6244,21 @@ $(document).ready(function() {
     }else{
       $('#search').addClass('hien');
     }
+  });
+});
+$(document).ready(function() {
+  $('#submit_nhantin').click(function(){
+    if(isEmpty($('#email_nhantin').val(), lang_nhapemailcuaban))
+    {
+      $('#email_nhantin').focus();
+      return false;
+    }
+    if(isEmail($('#email_nhantin').val(), lang_emailkhonghople))
+    {
+      $('#email_nhantin').focus();
+      return false;
+    }
+    document.frm_dknt.submit(); 
   });
 });
 $(document).ready(function() {

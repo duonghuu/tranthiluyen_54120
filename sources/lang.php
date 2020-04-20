@@ -125,7 +125,7 @@
 @define ('_nhahang','Nhà hàng');
 @define ('_trangchu','Trang chủ');
 @define ('_gioithieu','Giới thiệu');
-@define ('_sanpham','Sản phẩm');
+@define ('_sanpham','Nhà đất');
 @define ('_tintuc','Tin tức');
 @define ('_tuyensinh','Tuyển sinh');
 @define ('_sukien','Sự kiện');
@@ -182,7 +182,7 @@
 @define ('_ngayhomqua','Ngày hôm qua');
 @define ('_thongketuan','Tuần');
 @define ('_thongkethang','Tháng');
-@define ('_tongtruycap','Tổng kết');
+@define ('_tongtruycap','Tổng truy cập');
 @define ('_tong','Tổng');
 
 //---------------- Tiện ích ----------------

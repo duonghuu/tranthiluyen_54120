@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 %hd-top-style {
     margin: 0;
-    @include setFont(16px, #fff);
+    @include setFont(15px, #fff);
 }
 
 %hd-logo-style {
@@ -44,45 +44,53 @@
 .hd-bg {
     width: 100%;
     z-index: 450;
-    @include absolute($left: 0);
+    @include relative($left: 0);
 }
 .hd-top{
-    border-bottom: 1px solid #322e2c;
+    background-color: $bg-header-top;
   &-flex{
-    @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+    @include boxstyle($display: flex, $justify-content: space-between, 
+        $align-items: center);
+    min-height: 40px;
+    .mxh{
+        @extend %mxh-style;
+    }
+    marquee{
+        @include flex(1);
+        @include setFont(14px, #fff, 700);
+        margin: 0 1em;
+    }
     p{
-        @include setFont(15px, #fff, 700, $font-JosefinSans);
+        @include setFont(15px, #fff, 400);
         margin-bottom: 0;
         line-height: 1;
       i{
-        margin-right: 5px;
+        margin-right: 7px;
       }
       a{
         color: #fff;
       }
       @include doubly(){
-        @include setFont(13px, #fff, 500, $font-roboto);
+        margin-left: em(30);
       };
   }
 }
 }
 .hd-bot{
-    padding: 5px 0;
   &-flex{
-    @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+    @include boxstyle($display: flex, $justify-content: space-between, 
+        $align-items: center);
     .hd-name{
         @include setFont(em(30), #fff, 700, $font-JosefinSans);
         text-transform: uppercase;
         margin: 0 em(15);
     }
+    }
 }
-}
-.mxh{
-    @extend %mxh-style;
-}
+
 .logo{
     img{
-        height: 110px;
+        height: 100px;
         @include transition(all 0.4s ease);
         @include when-inside('.fixed'){
         }

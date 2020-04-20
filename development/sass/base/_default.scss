@@ -18,24 +18,24 @@
     width: 100%;
 }
 
+.contact-flex {
+    @include boxstyle($display: flex, $justify-content: space-between, $flex-wrap: wrap);
+}
 .tt_lh {
-    width: 49%;
+    width: 100%;
 }
 
 .bando {
-    width: 49%;
+    width: 100%;
 }
 
 .bando iframe {
-    width: 100% !important;
+    width: 100%;
     border: 1px solid #ddd !important;
     padding: 5px;
-    height: 100%;
+    height: 300px;
 }
 
-/*div.left_gh{width:65%;float:left;}
-div.right_gh{width:33%;float:right;}
-.box_news{width:47%; display:inline-block;vertical-align: top; margin:0 1%;}*/
 .user-manage-flex {
     display: flex;
     justify-content: center;
@@ -43,8 +43,6 @@ div.right_gh{width:33%;float:right;}
 
 .dangky {
     width: 49%;
-
-    /* float: left; */
 }
 
 .dangky_frm {
@@ -56,8 +54,6 @@ div.right_gh{width:33%;float:right;}
 }
 
 div.dangnhap {
-    /* float:right; */
-
     width: 49%;
     position: relative;
     order: 1;
@@ -84,13 +80,7 @@ div.tieude_dangnhap {
     width: 300px;
     background: #fff;
     text-align: center;
-
-    /* border: 1px solid #ffffff; */
-
     font-size: 13px;
-
-    /* border-radius: 5px; */
-
     overflow: hidden;
 }
 
@@ -106,13 +96,7 @@ div.tieude_dangnhap {
 
 .popup_thongbao .popup_kq {
     padding: 20px;
-
-    /* font-weight: bold; */
-
     color: #000000;
-
-    /* min-height: 70px; */
-
     align-items: center;
     font-size: 14px;
     margin: 0;

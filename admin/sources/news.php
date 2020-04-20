@@ -222,7 +222,8 @@ function save_item(){
 		if($photo = upload_image("file", _format_duoihinh, _upload_tintuc,$file_name)){
 			$data['photo'] = $photo;
 			if(_width_thumb > 0 and _height_thumb > 0)
-				$data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_tintuc,$file_name,_style_thumb);
+				$data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_tintuc,
+					$file_name,_style_thumb,_ext_thumb);
 			$row=get_fetch("select photo,thumb from #_news where id=".$id);
 			if($row){
 				delete_file(_upload_tintuc.$row['photo']);

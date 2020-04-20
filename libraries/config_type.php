@@ -48,7 +48,7 @@ switch($type){
 		break;
 
 		default:
-		$config['type'] = array('seo','ten','mota','gia','noibat','danhmuc','list','hinhanh','noidung');
+		$config['type'] = array('seo','ten','mota','noibat','danhmuc','list','hinhanh','noidung');
 		$config['ck'] = array('mota2');
 		$config['title'] = array('tieubieu'=>"Sản phẩm hot",'noibat'=>"Nổi bật",
 			'spmoi'=>"Mới",'spbanchay'=>"Bán chạy","mota"=>"Mô tả","toado"=>"Iframe google map",
@@ -198,18 +198,13 @@ switch($type){
 	}
 	break;
 	case 'tin-tuc':
-	case 'chuoi-quan':
 	case 'tuyen-dung':
-	case 'chinh-sach':
 	switch($act){
 		case 'danhmuc':
 		$config['type'] = array('seo','ten');
 		break;
 		default:
 		$config['type'] = array('seo','ten','noidung','mota','hinhanh');
-		if($type == "tin-tuc"){
-			$config['type'][] = "noibat";	
-		}
 		@define ( _width_thumb , 400 );
 		@define ( _height_thumb , 300 );
 		@define ( _style_thumb , 1 );
@@ -253,25 +248,21 @@ switch($type){
 	}
 	break;
 //-------------tin tuc------------------
-	case 'y-kien':
+	case 'chinh-sach':
+	case 'huong-dan':
 	switch($act){
 		default:
-		$config['type'] = array('ten','chucvu','hinhanh','mota');
-		@define ( _width_thumb , 100 );
-		@define ( _height_thumb , 100 );
-		@define ( _style_thumb , 3 );
-		@define ( _width_thumb2 , 100 );
-		@define ( _height_thumb2 , 100 );
+		$config['type'] = array('seo','ten','noidung');
 		break;
 	}
 	break;
-	case 'the-manh':
+	case 'thong-tin':
 	switch($act){
 		default:
-		$config['type'] = array('ten','hinhanh','mota');
+		$config['type'] = array('seo','ten','hinhanh','noidung');
 		@define ( _width_thumb , 70 );
 		@define ( _height_thumb , 70 );
-		@define ( _style_thumb , 3 );
+		@define ( _style_thumb , 2 );
 		@define ( _width_thumb2 , 70 );
 		@define ( _height_thumb2 , 70 );
 		break;
@@ -297,18 +288,15 @@ switch($type){
 		break;
 	}
 	break;
-	case 'txtthu-vien':
-	switch($act){
-		default:
-		$config['type'] = array('mota');
-		break;
-	}
-	break;
 //-------------chinh sach / ho tro / cham soc khach hang------------------
-	case 've-chung-toi':
+	case 'ho-tro1':
 	switch($act){
 		default:
-		$config['type'] = array('seo','ten','noidung');
+		$config['type'] = array('ten','hinhanh','mota');
+		$config['title'] = array('mota'=>'Nội dung');
+		@define ( _style_thumb , 3 );
+		@define ( _width_thumb2 , 30 );
+		@define ( _height_thumb2 , 30 );
 		break;
 	}
 	break;
@@ -432,11 +420,11 @@ switch($type){
 	case 'quang-cao':
 	switch($act){
 		default:
-		@define ( _width_thumb , 1366 );
-		@define ( _height_thumb , 400 );
-		@define ( _style_thumb , 3 );
-		@define ( _width_thumb2 , 1366 );
-		@define ( _height_thumb2 , 400 );
+		@define ( _width_thumb , 270 );
+		@define ( _height_thumb , 510 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 270 );
+		@define ( _height_thumb2 , 510 );
 		break;
 	}
 	break;
@@ -455,7 +443,7 @@ switch($type){
 	case 'gioi-thieu':
 	switch($act){
 		default:
-		$config['type'] = array('seo','noidung','ten','mota','ten2');
+		$config['type'] = array('seo','noidung');
 		$config['title'] = array('ten2'=>'Tiêu để nhỏ');
 		@define ( _width_thumb , 585 );
 		@define ( _height_thumb , 400 );
@@ -477,7 +465,12 @@ switch($type){
 	case 'footer':
 	switch($act){
 		default:
-		$config['type'] = array('noidung');
+		$config['type'] = array('noidung','hinhanh');
+		@define ( _width_thumb , 150 );
+		@define ( _height_thumb , 80 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 150 );
+		@define ( _height_thumb2 , 80 );
 		break;
 	}
 	break;

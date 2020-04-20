@@ -4,7 +4,7 @@
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1220px !default;
+$max-width: 1230px !default;
 $browser-context: 16;
 /* ======================== FONTS ======================== */
 $font-SFUSchadowBTBlackCondensed        : 'SFUSchadowBTBlackCondensed';
@@ -25,25 +25,25 @@ $font-muli                              : 'Muli', sans-serif;
 $font-oswald                            : 'Oswald', sans-serif;
 $font-nunito                            : 'Nunito', sans-serif;
 
-$font-title             : $font-roboto;
+$font-title             : $font-montserrat;
 $font-text              : $font-roboto;
 $font-awesome           : 'Font Awesome 5 Free';
 $font-second            : 'Arial';
 /* ======================== HEADER ======================== */
-$bg-header-top          : #000000;
+$bg-header-top          : #069cd7;
 $bg-header              : #fff;
 $bg-breadcrumb           : #f7f6f6;
 /* ======================== MENU ======================== */
 $font-menu              : $font-roboto;
-$color-menu-hover       : #d61111;
+$color-menu-hover       : #069cd7;
 $bg-menu                : transparent;
-$bg-valak               : #5a280e;
+$bg-valak               : #069cd7;
 $bg-menu-item           : transparent;
 $bg-menu-item-hover     : transparent;
 /* ======================== FOOTER ======================== */
-$bg-copyright       : #219900;
-$bg-footer          : #219900;
-$theme-color        : #5a280e;
+$bg-copyright       : #069cd7;
+$bg-footer          : #069cd7;
+$theme-color        : #069cd7;
 $height-map         : 485px;
 /* ======================== URL ======================== */
 $font-url           : 'css/fonts/';
@@ -75,8 +75,8 @@ $device_size_small    : 768px;
 $device_size_medium   : 992px;
 $device_size_large    : 1200px;
 
-$mobile: "<=mobile","screen";
-$extraSmall: ">mobile","<small","screen";
-$small: ">=small","<medium","screen";
-$medium: ">=medium","<large","screen";
-$large: ">=large","screen";
+$MB: "<=mobile","screen";
+$XS: ">mobile","<small","screen";
+$SM: ">=small","<medium","screen";
+$MD: ">=medium","<large","screen";
+$LG: ">=large","screen";

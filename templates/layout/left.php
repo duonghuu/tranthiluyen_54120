@@ -1,4 +1,4 @@
-<?php include _template."layout/sanpham_boloc.php";?>
+<?php //include _template."layout/sanpham_boloc.php";?>
 <?php /* <div class="hotro danhmuc">
   <div class="tieude"><span>Gọi mua hàng</span></div>
   <div class="danhmuc-box">
@@ -20,13 +20,21 @@
     <?php } ?>
   </div>
 </div> */?>
- <?php /* <div class="danhmuc dm-sp">
+<div class="danhmuc dm-sp">
    
-   <div class="tieude">Danh mục sản phẩm</div>
-   <div class="danhmuc-box">
-     <?= for2cap('product_danhmuc','product_list','san-pham','san-pham','','') ?>
+   <div class="tieude">Danh mục</div>
+   <div class="danhmuc-box" id="danhmuc">
+     <?= for2cap('product_danhmuc','product_list','bat-dong-san','bat-dong-san','','/') ?>
    </div>
- </div> */?>
+ </div>
+
+<div class="web-slider-main quangcao">
+  <?php foreach ($quangcao as $key => $value) {
+    $img = GetImg(_upload_hinhanh_l.$value["thumb"]);
+    echo '<div class="quangcao-item"><a href="'.$value["link"].'">
+    <img src="'.$img.'" alt="'.$value["ten"].'"></a></div>';
+  } ?>
+</div>
 <?php /* <div class="chaysp danhmuc">
 
   <div class="tieude">tin mới nhất</div>

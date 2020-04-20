@@ -94,7 +94,6 @@
 <?php /*  <div class="li"><div class="danhgiasao" data-url="<?=getCurrentPageURL();?>">
 <?php for($i=1;$i<=5;$i++) { ?><span data-value="<?=$i?>" data-id="<?=$row_detail["id"]?>"></span>
 <?php } ?>&nbsp;&nbsp;<b class="num_danhgia"><?=$num_danhgiasao?>/5</b></div> </div> */?>
-<div class="li"><b><?=_soluong?>:</b> <input type="number" value="1" class="soluong" /></div>   
 <div class="li"><?php include _template."layout/share.php";?></div>
 </div>
 </div><!--.wap_pro-->

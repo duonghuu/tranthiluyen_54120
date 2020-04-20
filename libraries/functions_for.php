@@ -1,5 +1,11 @@
 <?php if(!defined('_lib')) die("Error");
-
+function GetImg($pathto){
+	if(file_exists($pathto)){
+		return $pathto;
+	} else {
+		return 'images/1x1.png';
+	}
+}
 function docgia($so){ 
   if (($so < 0) || ($so > 999999999999999)) 
   {
@@ -300,15 +306,15 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		// '%</span>':"";
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
 		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
-		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
-		$gia = ($giasp>0)?num_format($giasp).'đ':_lienhe;
-		$s_gia = "";
-		if($v["giakm"]>0) {
-			$s_gia .= '<span>'.num_format($v["giakm"]).'đ</span>';
-			$s_gia .= '<del>'.num_format($v["gia"]).'đ</del>';
-		}else{
-			$s_gia .= '<span>'.$gia.'</span>';
-		}
+		// $giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
+		// $gia = ($giasp>0)?num_format($giasp).'đ':_lienhe;
+		// $s_gia = "";
+		// if($v["giakm"]>0) {
+		// 	$s_gia .= '<span>'.num_format($v["giakm"]).'đ</span>';
+		// 	$s_gia .= '<del>'.num_format($v["gia"]).'đ</del>';
+		// }else{
+		// 	$s_gia .= '<span>'.$gia.'</span>';
+		// }
 		// $danhgiasao = get_result("select ROUND(AVG(giatri)) as giatri FROM #_danhgiasao 
 		// where id_sanpham='".$v["id"]."' order by time desc");
 		// if($danhgiasao[0]['giatri']==0){$num_danhgiasao=0;}
@@ -343,10 +349,11 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		echo $slickdiv.'<div class="pr-box name '.$wowclass.'" >
 		<article>
 				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
-				$giaspgiam.$sizepanel.'</a> 
+				$giaspgiam.'</a> 
 			<div class="info">
 			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
-			<p>Giá:'.$s_gia.'</p>
+			<p><strong>Giá thỏa thuận</strong></p>
+			<p>'.catchuoi($v["mota"],80).'</p>
 			</div>
 		</article></div>'.$slickenddiv;
 	}
