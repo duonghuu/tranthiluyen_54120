@@ -76,19 +76,26 @@
 // set Left Right Template Mobile
 @mixin setLeftRightMobile{
   div.main_content {
-      div.left{
-        float: none;
-          width: 100%;
-          margin-bottom: 1em;
-      }
-
-      div.right{
-        float: none;
-          width: 100%;
-          margin-bottom: 1em;
-        margin-left: 0;
-      }
+    div.left{
+      width: percentage(350/1200);
+      @include media('<=mobile'){
+        // float: none;
+        // width: 100%;
+        // margin-bottom: 1em;
+        display: none;
+      };
     }
+
+    div.right{
+      width: percentage(820/1200);
+      @include media('<=mobile'){
+
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+      };
+    }
+  }
 }
 // set Cart Template Mobile
 @mixin setCartMobile{
@@ -148,11 +155,18 @@
 /*========= HEADER ===============*/
 @mixin setHeaderCenter(){
   .hd-bg{
-    position: relative;
-    background-color: #000;
+  //   position: relative;
+  //   background-color: #000;
     .hd-top{
       display: none;
     }
+    @include media('<=medium'){
+      .hd-bot{
+        &-flex{
+          @include justify-content(center);
+        }
+      }
+    };
   }
   @content;
 }
@@ -242,6 +256,9 @@
   .pr-box,.spnoibat-flex .product-grid .pr-box,.sptieubieu-flex .product-grid 
   .pr-box, .spnoibat-bg .danhmuc-sanpham .danhmuc-sanpham-box .product-grid .pr-box{
     @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
+    @include media('<=mobile'){
+      margin-bottom: 1em;
+    };
   }
   @content;
 }
@@ -285,9 +302,26 @@
   #footer {
     .ft-flex {
       @include flex-wrap(wrap);
-      .ft-info, .ft-social,.ft-video, .ft-baiviet  {
-        width: 49%;
+      .ft-info{
+        width: 100%;
         margin-bottom: 1em;
+      }
+      .ft-right-bot,.ft-right-top{
+        @include flex-wrap(wrap);
+      }
+       .ft-social,.ft-video, .ft-baiviet  {
+        width: percentage(1/3);
+        margin-bottom: 1em;
+        @include media('<=mobile'){
+        @include flex(unset);
+        width: 100%;
+
+        };
+      }
+      .ft-right-bot{
+        .ft-dknt{
+          margin-bottom: 10px;
+        }
       }
     }
   }

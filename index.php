@@ -7,9 +7,9 @@ $session=session_id();
 @define ( '_lib' , './libraries/');
 include_once _lib."breadcrumb.php";
 $bread = new breadcrumb();
-// include_once _lib."Mobile_Detect.php";
-// $detect = new Mobile_Detect;
-// $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+include_once _lib."Mobile_Detect.php";
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 include_once _lib."config.php";
 include_once _lib."constant.php";
 require_once _source."lang$lang.php";
@@ -46,7 +46,7 @@ $_SESSION['dong'] = lay_banner('dong');
         <section class="head-main">
             <?php 
             include _template."layout/header.php";
-            // include _template."layout/valak_menu.php";
+            include _template."layout/valak_menu.php";
             include _template."layout/slider.php";
             if($source != "index") echo $bread->display();
             ?>
@@ -76,7 +76,7 @@ $_SESSION['dong'] = lay_banner('dong');
     //include _template."layout/chat_facebook.php";
     // include _template."layout/cart_popup.php";
     if($deviceType=="computer") include _template."layout/phone3.php";
-    // include _template."layout/phone2.php";
+    include _template."layout/phone2.php";
 }else{
     include _template.$template."_tpl.php";
 }

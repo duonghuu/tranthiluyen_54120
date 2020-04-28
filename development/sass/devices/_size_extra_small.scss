@@ -1,23 +1,23 @@
 @media screen 
 	and (min-width: $device_size_mobile)
 	and (max-width: $device_size_small) {
-    @include setHeaderCenter;
-      @include showMobileMenu;
-      @include setIdxTitleSize;
+    // @include setHeaderCenter;
+    //   @include showMobileMenu;
+    //   @include setIdxTitleSize;
 
       /*========= HOME ===============*/
-      @include setGioiThieu_SM;
-      @include setViSao_SM;
-      $product-gutter: percentage(30/1330);
+      // @include setGioiThieu_SM;
+      // @include setViSao_SM;
+      $product-gutter: percentage(20/900);
       @include setProductColumnMobile($p_col: 6, $p_gutter: $product-gutter);
-      @include setTinVideoFull;
+      // @include setTinVideoFull;
       // @include setProductMobile;
       // @include setSpnoibatSmall;
       // @include setThemanhSmall;
       // @include setCheckout_lg;
       // @include setSliderSmall;
       // @include setDoitacSmall;
-      // @include setLeftRightMobile;
+      @include setLeftRightMobile;
       // @include setCartMobile;
       // @include setTaiSaoFull;
       

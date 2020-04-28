@@ -29,11 +29,14 @@
 <meta property="og:description" content="<?php if($description_facebook!='')echo $description_facebook;else echo $company['description'];?>" />
 <meta property="og:type" content="<?= $type_og ?>" />
 <meta property="og:site_name" content="<?=$company['ten']?>" />
-<link rel="canonical" href="<?=getCurrentPageURL();?>" />
 <?php if($config['reponsive']==true) { ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <?php } else { ?>
 <meta name="viewport" content="width=1300">
 <?php } ?>
 <!--Meta facebook-->
+<link rel="canonical" href="<?=getCurrentPageURL()?>" />
+<?php if($type=='bat-dong-san') {?>
+<link rel="amphtml" href="<?=getCurrentPageURL_AMP()?>" />
+<?php } ?>
      
